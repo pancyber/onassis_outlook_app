@@ -1,1 +1,1 @@
-# onassis_outlook_app
+# Simple Outlook Addin proof-of-concept
