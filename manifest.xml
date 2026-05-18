@@ -6,9 +6,8 @@
   xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
   xsi:type="MailApp">
   
-  <!-- Updated with a fresh GUID -->
-  <Id>d142b5a1-7e78-4389-913a-75b2de34ab9e</Id>
-  <Version>1.0.0.2</Version>
+  <Id>f47ac10b-58cc-4372-a567-0e02b2c3d479</Id>
+  <Version>1.0.0.5</Version>
   <ProviderName>Onassis</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Word Count Reminder" />
@@ -16,7 +15,11 @@
   
   <IconUrl DefaultValue="https://pancyber.github.io/onassis_outlook_app/icon-64.png" />
   <HighResolutionIconUrl DefaultValue="https://pancyber.github.io/onassis_outlook_app/icon-128.png" />
-  <SupportUrl DefaultValue="https://pancyber.github.io/onassis_outlook_app/" />
+  <SupportUrl DefaultValue="https://pancyber.github.io/onassis_outlook_app/autorun.html" />
+
+  <AppDomains>
+    <AppDomain>https://pancyber.github.io</AppDomain>
+  </AppDomains>
 
   <Hosts>
     <Host Name="Mailbox" />
@@ -28,12 +31,10 @@
     </Sets>
   </Requirements>
 
-  <!-- MANDATORY SCHEMA FALLBACKS -->
   <FormSettings>
-    <Form xsi:type="ItemRead">
+    <Form xsi:type="ItemEdit">
       <DesktopSettings>
         <SourceLocation DefaultValue="https://pancyber.github.io/onassis_outlook_app/autorun.html" />
-        <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
   </FormSettings>
@@ -41,11 +42,10 @@
   <Permissions>ReadWriteItem</Permissions>
   
   <Rule xsi:type="RuleCollection" Mode="Or">
-    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit" />
   </Rule>
   
   <DisableEntityHighlighting>false</DisableEntityHighlighting>
-  <!-- END MANDATORY FALLBACKS -->
 
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
@@ -81,4 +81,3 @@
     </VersionOverrides>
   </VersionOverrides>
 </OfficeApp>
-```</Rule></FormSettings>
