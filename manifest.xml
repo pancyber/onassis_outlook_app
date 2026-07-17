@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="MailApp">
 <Id>f47ac10b-58cc-4372-a567-0e02b2c3d479</Id>
 <Version>1.0.0.10</Version>
@@ -29,6 +30,7 @@
 <Permissions>ReadWriteItem</Permissions>
 <Rule xsi:type="RuleCollection" Mode="Or">
 <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit"/>
+<Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit"/>
 </Rule>
 <DisableEntityHighlighting>false</DisableEntityHighlighting>
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
@@ -48,6 +50,7 @@
 <ExtensionPoint xsi:type="LaunchEvent">
 <LaunchEvents>
 <LaunchEvent Type="OnNewMessageCompose" FunctionName="onNewMessageComposeHandler"/>
+<LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onNewAppointmentComposeHandler"/>
 </LaunchEvents>
 <SourceLocation resid="WebViewRuntime.Url"/>
 </ExtensionPoint>
