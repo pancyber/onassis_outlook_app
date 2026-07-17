@@ -2,10 +2,10 @@ Office.onReady(() => {
     // Office is ready
 });
 
-function showPersistentBanner(event) {
+function onNewAppointmentComposeHandler(event) {
     const notification = {
         type: Office.MailboxEnums.ItemNotificationMessageType.InformationalMessage,
-        message: "Please keep all emails concise and professional. Aim for under 200 words.",
+        message: "Your calendar policy tip text goes here.", 
         icon: "Icon.16x16",
         persistent: true
     };
@@ -15,5 +15,4 @@ function showPersistentBanner(event) {
     });
 }
 
-// Crucial: Associate the function name from the manifest with the actual JS function
-Office.actions.associate("showPersistentBanner", showPersistentBanner);
+Office.actions.associate("onNewAppointmentComposeHandler", onNewAppointmentComposeHandler);
