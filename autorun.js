@@ -3,7 +3,7 @@ Office.onReady(() => {});
 function onNewAppointmentComposeHandler(event) {
     const notification = {
         type: Office.MailboxEnums.ItemNotificationMessageType.InformationalMessage,
-        message: "Your calendar policy tip text goes here.", 
+        message: "Please include a concise agenda and clear objectives for this meeting.", 
         icon: "Icon.16x16",
         persistent: true
     };
