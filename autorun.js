@@ -16,7 +16,7 @@ function onNewAppointmentComposeHandler(event) {
 function onNewMessageComposeHandler(event) {
     const notification = {
         type: Office.MailboxEnums.ItemNotificationMessageType.InformationalMessage,
-        message: "Please keep all emails concise and professional. Aim for under 200 words.", 
+        message: "Please keep the email brief, clear and concise. Max 200 words - Max six (6) recipients!", 
         icon: "Icon.16x16",
         persistent: true
     };
