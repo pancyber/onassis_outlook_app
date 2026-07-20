@@ -7,11 +7,11 @@
   xsi:type="MailApp">
 
   <Id>f47ac10b-58cc-4372-a567-0e02b2c3d479</Id>
-  <Version>1.0.0.11</Version>
+  <Version>1.0.0.12</Version>
   <ProviderName>Onassis</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Word Count Reminder"/>
-  <Description DefaultValue="Automatically displays a brevity reminder when composing emails."/>
+  <Description DefaultValue="Automatically displays a brevity reminder when composing emails and meeting requests."/>
 
   <IconUrl DefaultValue="https://pancyber.github.io/onassis_outlook_app/icon-64.png"/>
   <HighResolutionIconUrl DefaultValue="https://pancyber.github.io/onassis_outlook_app/icon-128.png"/>
@@ -43,6 +43,7 @@
 
   <Rule xsi:type="RuleCollection" Mode="Or">
     <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit"/>
+    <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit"/>
   </Rule>
 
   <DisableEntityHighlighting>false</DisableEntityHighlighting>
@@ -75,6 +76,9 @@
               <LaunchEvent
                 Type="OnNewMessageCompose"
                 FunctionName="onNewMessageComposeHandler"/>
+              <LaunchEvent
+                Type="OnNewAppointmentOrganizer"
+                FunctionName="onNewAppointmentComposeHandler"/>
             </LaunchEvents>
             <SourceLocation resid="WebViewRuntime.Url"/>
           </ExtensionPoint>
